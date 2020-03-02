@@ -1,0 +1,11 @@
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\bin\Debug\netcoreapp2.1\lab9.deps.json
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\bin\Debug\netcoreapp2.1\lab9.runtimeconfig.json
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\bin\Debug\netcoreapp2.1\lab9.runtimeconfig.dev.json
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\bin\Debug\netcoreapp2.1\lab9.dll
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\bin\Debug\netcoreapp2.1\lab9.pdb
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.csprojAssemblyReference.cache
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.csproj.CoreCompileInputs.cache
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.AssemblyInfoInputs.cache
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.AssemblyInfo.cs
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.dll
+C:\Users\tatyana\source\repos\сs_labs\lab9\lab9\obj\Debug\netcoreapp2.1\lab9.pdb
