@@ -12,18 +12,20 @@ namespace lab1
             if (coeffs == null)
             {
                 Console.WriteLine("Коэффициенты введены некорректно.");
+                Console.ReadKey();
                 return;
             }
 
             var eq = new CubicEquation(coeffs);
             Console.WriteLine(eq);
 
-            Console.WriteLine("Метод Кардано");
+            Console.WriteLine("\nМетод Кардано");
             var sol1 = eq.SolveByCardano();
 
             if (sol1 == null)
             {
                 Console.WriteLine("Уравнение не кубическое");
+                Console.ReadKey();
                 return;
             }
 

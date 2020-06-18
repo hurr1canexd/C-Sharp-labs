@@ -3,7 +3,6 @@ using System.Numerics;
 
 namespace lab1
 {
-
     // a*x^3 + b*x^2 + c*x + d = 0
     public class CubicEquation
     {
@@ -121,48 +120,59 @@ namespace lab1
         public Complex[] SolveByVietCardano()
         {
             var solution = new Complex[3];
+            if (_a == 0)
+            {
+                return null;
+            }
+            double a = _b / _a;
+            double b = _c / _a;
+            double c = _d / _a;
 
-            double Q = (_a * _a - 3 * _b) / 9;
-            double R = (2 * _a * _a * _a - 9 * _a * _b + 27 * _c) / 54;
+            double Q = (a * a - 3 * b) / 9;
+            double R = (2 * a * a * a - 9 * a * b + 27 * c) / 54;
 
             if (R * R < Q * Q * Q)
             {
                 var t = Math.Acos(R / Math.Sqrt(Math.Pow(Q, 3))) / 3;
-                var x1 = -2 * Math.Sqrt(Q) * Math.Cos(t) - _a / 3;
-                var x2 = -2 * Math.Sqrt(Q) * Math.Cos(t + (2 * Math.PI / 3)) - _a / 3;
-                var x3 = -2 * Math.Sqrt(Q) * Math.Cos(t - (2 * Math.PI / 3)) - _a / 3;
+                var x1 = -2 * Math.Sqrt(Q) * Math.Cos(t) - a / 3;
+                var x2 = -2 * Math.Sqrt(Q) * Math.Cos(t + (2 * Math.PI / 3)) - a / 3;
+                var x3 = -2 * Math.Sqrt(Q) * Math.Cos(t - (2 * Math.PI / 3)) - a / 3;
 
                 solution[0] = new Complex(x1, 0);
                 solution[1] = new Complex(x2, 0);
                 solution[2] = new Complex(x3, 0);
+
+                return solution;
             }
             else
             {
                 var A = -Math.Sign(R) * Math.Pow(Complex.Abs(R) + Math.Sqrt(Math.Pow(R, 2) - Math.Pow(Q, 3)), (1.0 / 3.0));
                 var B = (A == 0) ? 0.0 : Q / A;
 
-                var x1 = (A + B) - _a / 3;
+                var x1 = (A + B) - a / 3;
 
                 if (A == B)
                 {
-                    var x2 = -A - _a / 3;
+                    var x2 = -A - a / 3;
 
                     solution[0] = new Complex(x1, 0);
                     solution[1] = new Complex(x2, 0);
-                    solution[2] = new Complex(double.NaN, double.NaN);
+                    solution[2] = new Complex(x2, 0);
+
+                    return solution;
                 }
                 else
                 {
-                    var x2 = new Complex(-(A + B) / 2 - _a / 3, -Math.Sqrt(3) * (A - B) / 2);
-                    var x3 = new Complex(-(A + B) / 2 - _a / 3, Math.Sqrt(3) * (A - B) / 2);
+                    var x2 = new Complex(-(A + B) / 2 - a / 3, -Math.Sqrt(3) * (A - B) / 2);
+                    var x3 = new Complex(-(A + B) / 2 - a / 3, Math.Sqrt(3) * (A - B) / 2);
 
                     solution[0] = new Complex(x1, 0);
                     solution[1] = x2;
                     solution[2] = x3;
+
+                    return solution;
                 }
             }
-
-            return solution;
         }
     }
 }

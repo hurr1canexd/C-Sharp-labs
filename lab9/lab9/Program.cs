@@ -2,48 +2,34 @@
 
 namespace lab9
 {
-    class Program
+    public delegate double Eqtn(double x);
+
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            const double epsilon = 1e-10;
-
-            double sol = dichotomy_method(1, 5, epsilon);
-
-            Console.WriteLine($"x = {sol}");
-            Console.ReadKey();
-        }
-
+        static readonly double epsilon = 1e-10;
 
         static double f(double x)
         {
-            return x * x - 4 * x;
+            return x * Math.Cos(x) - Math.Sin(x);
         }
 
-
-        static double dichotomy_method(double a, double b, double eps)
+        static void Main(string[] args)
         {
-            double c, ans;
+            var segment = Tuple.Create(-10.0, -12.0);
+            var es = new EquationSolver();
+            var sol = default(double);
 
-            while (b - a > eps)
-            { 
-                c = (a + b) / 2;
-
-                if (f(a) * f(c) < 0)
-                {
-                    b = c;
-                }
-                else if (f(a)*f(c) > 0)
-                { 
-                    a = c;
-                }
-                else
-                { 
-                    return c;
-                }
+            try
+            {
+                sol = es.DichotomyMethod(segment, f, epsilon);
+                Console.WriteLine($"x = {sol}");
             }
-
-            return a;
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            Console.ReadKey();
         }
     }
 }

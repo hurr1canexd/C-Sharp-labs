@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "lab14": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\\\Users\\\\Dmitriy\\\\source\\\\repos\\\\lab14\\\\lab14\\\\input.txt C:\\\\Users\\\\Dmitriy\\\\source\\\\repos\\\\lab14\\\\lab14\\\\output.txt"
+    }
+  }
+}
